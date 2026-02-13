@@ -1,15 +1,23 @@
 require("dotenv").config();
 const express = require("express");
 const connectToDB = require("./src/db/db");
-
-
 const app = express();
+const authRoutes = require("./src/routes/authRoutes");
 
 
 
+//Middlewares
+
+app.use(express.json());
+
+//Routes
+app.use("/auth",authRoutes);
+
+
+
+//Server
 
 connectToDB();
 app.listen(process.env.PORT,function(){
     console.log(`Server runnig on port ${process.env.PORT}`)
 });
-
