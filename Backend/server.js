@@ -3,11 +3,11 @@ const express = require("express");
 const connectToDB = require("./src/db/db");
 const app = express();
 const authRoutes = require("./src/routes/authRoutes");
-
+const cookier_parser = require("cookie-parser");
 
 
 //Middlewares
-
+app.use(cookier_parser());
 app.use(express.json());
 
 //Routes

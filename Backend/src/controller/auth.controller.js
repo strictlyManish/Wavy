@@ -32,7 +32,7 @@ RegisterController = async (req, res) => {
 
     res.cookie("token", token);
 
-    res.status(200).json({
+    return res.status(200).json({
       message: "User Created Successfully",
     });
   } catch (error) {
@@ -72,16 +72,72 @@ LoginController = async (req, res) => {
 
     res.cookie("token", token);
 
-    res.status(200).json({
+    return res.status(200).json({
       message: "Logged In",
     });
-
   } catch (error) {
-    console.log(error)
     res.status(500).json({
       message: "Internal server error",
     });
   }
 };
 
-module.exports = { RegisterController, LoginController };
+const LoggedoutContreoller = async (req, res) => {
+  try {
+    res.clearCookie("accessToken", {
+      httpOnly: true,
+      sameSite: "Strict",
+    });
+
+    res.clearCookie("refreshToken", {
+      httpOnly: true,
+      sameSite: "Strict",
+    });
+
+    return res.status(200).json({
+      success: true,
+      message: "Logged out successfully",
+    });
+  } catch (error) {
+    console.error("Logout Error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Logout failed",
+    });
+  }
+};
+
+const RetriveUserController = async (req, res) => {
+  try {
+    const user = req.user;
+
+    const data = await userModel.findById(user.id);
+
+    if (!user) {
+      return res.status.json({
+        message: "invalide user or incorrect id",
+      });
+    }
+
+    return res.status(200).json({
+      message: "User details fetched sucessfully",
+      data: {
+        name: data.name,
+        email: data.email,
+      },
+    });
+  } catch (error) {
+    console.error("Logout Error:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error",
+    });
+  }
+};
+
+module.exports = {
+  RegisterController,
+  LoginController,
+  LoggedoutContreoller,
+  RetriveUserController,
+};
