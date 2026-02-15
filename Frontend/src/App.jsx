@@ -1,11 +1,20 @@
+import { useEffect, useState } from "react";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Onbord from "./components/Onbord";
 
 function App() {
-  return (
-    <div className="bg-gray-950 text-white overflow-hidden select-none">
-      <Home />
-    </div>
-  );
+  const [showAuth, setShowAuth] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAuth(true);
+    }, 5000); // 5 seconds baad login page
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return <>{showAuth ? <Onbord /> : <Home />}</>;
 }
 
 export default App;
