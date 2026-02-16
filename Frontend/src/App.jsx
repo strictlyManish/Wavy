@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
 import Onbord from "./components/Onbord";
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowAuth(true);
-    }, 5000); // 5 seconds baad login page
+    }, 2000); // 5 seconds baad login page
 
     return () => clearTimeout(timer);
   }, []);
