@@ -18,6 +18,4 @@ routes.get("/get", authMiddlleware, RetriveUserController);
 
 
 
-
-
 module.exports = routes;

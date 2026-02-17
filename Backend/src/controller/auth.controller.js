@@ -46,6 +46,13 @@ LoginController = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    if(!email && !password){
+      return res.status(406).json({
+        message:"input fields are required"
+      })
+    };
+
+
     if (!validator.isEmail(email)) {
       return res.status(400).json({ message: "Invalid email format." });
     }
@@ -82,14 +89,14 @@ LoginController = async (req, res) => {
   }
 };
 
-const LoggedoutContreoller = async (req, res) => {
+LoggedoutContreoller = async (req, res) => {
   try {
-    res.clearCookie("accessToken", {
+    res.clearCookie("token", {
       httpOnly: true,
       sameSite: "Strict",
     });
 
-    res.clearCookie("refreshToken", {
+    res.clearCookie("token", {
       httpOnly: true,
       sameSite: "Strict",
     });
@@ -107,7 +114,7 @@ const LoggedoutContreoller = async (req, res) => {
   }
 };
 
-const RetriveUserController = async (req, res) => {
+RetriveUserController = async (req, res) => {
   try {
     const user = req.user;
 

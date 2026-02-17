@@ -7,6 +7,8 @@ function Onbord() {
     "Create playlists and enjoy music",
   ];
 
+  const navigate = 
+
   const [index, setIndex] = useState(0);
 
   const nextSlide = () => {
@@ -18,6 +20,8 @@ function Onbord() {
       nextSlide();
     }, 2000);
   }, []);
+
+
 
   return (
     <div className="h-screen bg-[#0F172A] flex flex-col">
