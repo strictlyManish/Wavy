@@ -72,7 +72,7 @@ const Navbar = () => {
         <svg
           width="21"
           height="15"
-          viewBox="0 0 21 15"
+          viewBox="0 0 21 15" 
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -84,7 +84,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`${open ? "flex" : "hidden"} absolute top-[60px] left-0 w-full bg-black/80 backdrop-blur-sm py-4 flex-col items-start gap-3 px-5 text-white sm:hidden z-40`}
+        className={`${open ? "flex" : "hidden"} absolute top-[60px] left-0 w-full bg-black/80 backdrop-blur-sm py-4 flex-col items-start gap-3 px-12 py-12 text-white sm:hidden z-40`}
       >
         <a href="/" className="block hover:text-[#00A63E] transition-colors">
           Home
