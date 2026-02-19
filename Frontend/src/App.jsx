@@ -1,3 +1,4 @@
+import Creation from "./components/Creation";
 import Navbar from "./components/Navbar";
 import Mainroutes from "./routes/Mainroutes";
 
@@ -6,9 +7,10 @@ function App() {
 
 
   return (
-    <div className="h-screen w-screen text-white">
+    <div className="text-white">
       <Navbar />
       <Mainroutes />
+      <Creation/>
     </div>
   );
 }
