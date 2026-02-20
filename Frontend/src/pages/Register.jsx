@@ -29,7 +29,7 @@ export default function Register() {
       </div>
 
       {/* Register */}
-      <div className='w-full max-w-lg max-md:mx-auto backdrop-blur-sm rounded-xl p-8'>
+      <div className='w-full max-w-lg max-md:mx-auto backdrop-blur-sm rounded-xl'>
         <form className='space-y-6' onSubmit={handleSubmit(onSubmit)}>
 
           {/* Name */}

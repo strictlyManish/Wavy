@@ -6,7 +6,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="relative flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur-sm bg-black/60 text-white z-50">
+    <nav className="w-screen flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 backdrop-blur-sm bg-black/60 text-white z-50">
       {/* Logo */}
       <a href="/" className="text-3xl font-mono text-white">
         Wavy
@@ -16,6 +16,9 @@ const Navbar = () => {
       <div className="hidden sm:flex items-center gap-8">
         <a href="/" className="block hover:text-[#00A63E] transition-colors">
           Home
+        </a>
+        <a href="/" className="block hover:text-[#00A63E] transition-colors">
+          Discover
         </a>
         <a
           href="/release"

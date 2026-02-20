@@ -2,7 +2,7 @@
 function Home() {
   
   return (
-   <main className="flex flex-col md:flex-row items-center max-md:text-center justify-between pb-16 px-6 sm:px-10 md:px-24 max-w-7xl mx-auto w-full">
+   <main className="flex h-screen flex-col md:flex-row items-center max-md:text-center justify-between pb-16 px-6 sm:px-10 md:px-24 max-w-7xl mx-auto w-full">
         {/* Hero Text */}
         <div className="flex flex-col items-center md:items-start">
           <button

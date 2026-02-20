@@ -13,7 +13,7 @@ export default function Login() {
   };
 
   return (
-    <section className='relative h-screen bg-black flex flex-col md:flex-row justify-center px-4 py-20 gap-20'>
+    <section className='relative h-screen bg-black flex flex-col md:flex-row justify-center px-4 py-25 gap-20'>
       
       {/* Background Glow */}
       <div className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none mb-10 size-140 bg-gray-500/35 rounded-full blur-[200px]'></div>
@@ -29,7 +29,7 @@ export default function Login() {
       </div>
 
       {/* Login Form */}
-      <div className='w-full max-w-lg max-md:mx-auto backdrop-blur-sm rounded-xl p-8'>
+      <div className='w-full max-w-lg max-md:mx-auto backdrop-blur-sm rounded-xl pt-10'>
         <form className='space-y-6' onSubmit={handleSubmit(onSubmit)}>
 
           {/* Email */}
