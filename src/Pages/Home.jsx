@@ -1,12 +1,12 @@
-import Sidebar from "../components/Sidebar";
-
-
+import Feed from "../components/Feed";
+import Sidebar from "../components/Sidebar"
 function Home() {
   return (
-    <>
-    <Sidebar/>
-    </>
-  )
+    <div className="flex">
+      <Sidebar />
+      <Feed/>
+    </div>
+  );
 }
 
-export default Home
+export default Home;

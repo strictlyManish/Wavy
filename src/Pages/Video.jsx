@@ -1,8 +1,11 @@
 import React from 'react'
+import PlayVideo from "../components/PlayVideo";
 
 function Video() {
   return (
-    <div>Video</div>
+    <div>
+      <PlayVideo/>
+    </div>
   )
 }
 

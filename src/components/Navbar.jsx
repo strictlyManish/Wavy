@@ -5,15 +5,19 @@ import {
   Search,
   TextAlignJustify,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
   return (
-    <div className="text-white w-full flex items-center justify-between px-4 py-3">
+    <div className="text-white bg-transparent backdrop-blur-3xl w-full flex items-center justify-between px-4 py-4 ">
       
       {/* LEFT SECTION */}
       <div className="flex items-center gap-4">
         <TextAlignJustify className="cursor-pointer" />
-        <img src="logo.png" alt="logo" className="w-24 sm:w-28" />
+        <img onClick={()=>navigate("/")} src="logo.png" alt="logo" className="w-24 sm:w-28 cursor-pointer" />
       </div>
 
       {/* CENTER SECTION (Hidden on small screens) */}
